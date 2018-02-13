@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odoo.TimesheetActivity"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:id="@+id/layoutTaskDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:background="#fff">
+
+
+        <LinearLayout
+            android:id="@+id/taskInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <TextView
+                android:id="@+id/txvTaskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:text="Task Title"/>
+            <TextView
+                android:id="@+id/txvProjectTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:text="Project Title" />
+
+            <TextView
+                android:id="@+id/txvDeadlineTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:text="Deadline"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txvProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:visibility="gone"
+                android:text="Progress"/>
+
+            <ProgressBar
+                android:id="@+id/pbProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="20"
+                android:visibility="gone"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressTint="@color/theme_primary_medium"
+                android:layout_margin="10dp"
+                android:progressBackgroundTint="@android:color/white"
+                />
+
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btnEditTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit_black_24dp"
+            android:tint="@android:color/white"
+            android:padding="8dp"
+            android:background="@drawable/login_signup_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ccc"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="#555"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hours"
+            android:textStyle="bold"
+            android:textColor="#555"
+            android:layout_weight="1"/>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshTimesheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/lvTimesheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:divider="#ccc"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center"
+        android:background="#eee"
+        android:gravity="center_vertical">
+        <Button
+            android:id="@+id/btnAddTimeSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Report"
+            android:drawableTint="@android:color/white"
+            android:drawableStart="@drawable/ic_add_black_24dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:drawablePadding="5dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/login_signup_button"
+            android:paddingTop="@dimen/default_8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/btnAddMessage"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_add_black_24dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:text="Message"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/login_signup_button"
+            android:paddingTop="@dimen/default_8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:drawableTint="@android:color/white"
+            android:paddingRight="15dp"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/txvTotalHoursTimesheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:textColor="#777"/>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#55000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_message_box">
+        <TextView
+            android:id="@+id/headTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FPP Notification"
+            android:background="@drawable/background_head_message_box"
+            android:textColor="@android:color/white"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:shadowColor="@android:color/white"
+            android:shadowRadius="2"
+            android:shadowDy="2"
+            android:textColor="@color/odoo_theme"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/odoo_theme"
+            android:text="Time before auto check out :"
+            android:shadowColor="@android:color/white"
+            android:shadowRadius="2"
+            android:shadowDy="2"/>
+        <TextView
+            android:id="@+id/countDownNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#666"
+            android:shadowColor="@android:color/white"
+            android:shadowRadius="3"
+            android:countDown="true"
+            android:shadowDy="1"
+            android:text="00:00"
+            android:background="@drawable/btn_location" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="bottom">
+            <Button android:id="@+id/Ok"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@drawable/btn_add_to_timesheet"
+                android:textColor="@android:color/white"
+                android:text="Yes"
+                android:padding="15dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:layout_margin="10dp"
+
+                />
+            <Button android:id="@+id/No"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_add_to_timesheet"
+                android:text="No"
+                android:padding="15dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:layout_margin="10dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

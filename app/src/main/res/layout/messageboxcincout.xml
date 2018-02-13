@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_message_box">
+        <TextView
+            android:id="@+id/headTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FPP Notification"
+            android:background="@drawable/background_head_message_box"
+            android:textColor="@android:color/white"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/contentText"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@android:color/holo_green_light"
+            android:textAppearance="?android:textAppearanceLarge"/>
+        <TextView
+            android:id="@+id/contentText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/theme_primary"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="bottom">
+            <Button android:id="@+id/Ok"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@drawable/login_signup_button"
+                android:textColor="@android:color/white"
+                android:text="OK"
+                android:padding="15dp"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:layout_margin="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

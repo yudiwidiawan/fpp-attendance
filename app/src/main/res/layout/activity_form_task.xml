@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.odoo.FormMessageActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DDD"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:padding="5dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:padding="10dp"
+                            android:text="Task Name"
+                            android:textColor="#777" />
+
+                        <EditText
+                            android:id="@+id/edtTaskName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_button"
+                            android:gravity="start"
+                            android:hint="Task Title..."
+                            android:textColorHint="#ccc"
+                            android:padding="8dp"
+                            android:textColor="#777"
+                            android:textAppearance="?android:textAppearanceSmall" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:padding="10dp"
+                            android:text="Project"
+                            android:textColor="#777" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edtProject"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_button"
+                            android:drawableEnd="@drawable/ic_expand_more_black_24dp"
+                            android:drawableRight="@drawable/ic_expand_more_black_24dp"
+                            android:drawableTint="#aaa"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="#777" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:padding="10dp"
+                            android:text="Parent Task"
+                            android:textColor="#777" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edtParentTask"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_button"
+                            android:drawableEnd="@drawable/ic_expand_more_black_24dp"
+                            android:drawableRight="@drawable/ic_expand_more_black_24dp"
+                            android:drawableTint="#aaa"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="5dp"
+                            android:textColor="#777"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textAppearance="?android:textAppearanceSmall" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:padding="10dp"
+                            android:text="Assigned To"
+                            android:textColor="#777" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edtAssignedTo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_button"
+                            android:drawableEnd="@drawable/ic_expand_more_black_24dp"
+                            android:drawableRight="@drawable/ic_expand_more_black_24dp"
+                            android:drawableTint="#aaa"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="#777"
+                            android:textAppearance="?android:textAppearanceSmall" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:lines="2"
+                                android:padding="10dp"
+                                android:text="Initially Planned Man Day(s)"
+                                android:textColor="#777" />
+
+                            <EditText
+                                android:id="@+id/edtManDays"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/white_button"
+                                android:drawableTint="#aaa"
+                                android:gravity="start"
+                                android:inputType="phone"
+                                android:padding="10dp"
+                                android:textColorHint="#ccc"
+                                android:textColor="#777"
+                                android:textAppearance="?android:textAppearanceSmall" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="2"
+                                android:padding="10dp"
+                                android:text="Deadline"
+                                android:textColor="#777" />
+
+                            <Button
+                                android:id="@+id/edtDeadline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/white_button"
+                                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                                android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:textColor="#777"
+                                android:textAppearance="?android:textAppearanceSmall" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:padding="10dp"
+                                android:text="Starting Date"
+                                android:textColor="#777" />
+
+                            <Button
+                                android:id="@+id/edtStartingDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/white_button"
+                                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                                android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:textColor="#777"
+                                android:textAppearance="?android:textAppearanceSmall" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="Ending Date"
+                                android:textColor="#777" />
+
+                            <Button
+                                android:id="@+id/edtEndingDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/white_button"
+                                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                                android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:textColor="#777"
+                                android:textAppearance="?android:textAppearanceSmall" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnSaveTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_signup_button"
+            android:padding="15dp"
+            android:text="Save Task"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>

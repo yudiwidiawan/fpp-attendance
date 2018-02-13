@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.odoo.LocationTest"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/fieldLatitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="Latitude"
+        />
+    <TextView
+        android:id="@+id/fieldLongitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="Longitude"
+        />
+    <TextView
+        android:id="@+id/fieldCountry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="Country"
+         />
+    <TextView
+        android:id="@+id/fieldCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="City"
+         />
+
+    <TextView
+        android:id="@+id/fieldPostalCode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="Postal Code"
+        />
+
+    <TextView
+        android:id="@+id/fieldAddressLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/android_blue"
+        android:text="Address Line"
+        />
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odoo.TaskActivity"
+    android:orientation="vertical"
+    android:background="#EEE">
+
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_signup_button"
+        android:drawableStart="@drawable/ic_add_black_24dp"
+        android:drawableLeft="@drawable/ic_add_black_24dp"
+        android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
+        android:drawableTint="#fff"
+        android:text="Create Task"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:layout_margin="8dp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/layoutEmptyPinnedTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txvNotificationListTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#777"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="There are no pinned tasks here, click search icon above to search \ntasks to be pinned here."
+            android:gravity="center"
+            android:shadowColor="@android:color/white"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:layout_margin="15dp"/>
+
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshTask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lvTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

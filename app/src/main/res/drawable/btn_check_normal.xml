@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="oval">
+            <gradient android:type="linear"
+                android:gradientRadius="200dp"
+                android:startColor="#FFF" android:endColor="#DDD" android:angle="-90"/>
+        </shape>
+    </item>
+    <item android:top="15dp"
+        android:bottom="15dp"
+        android:right="15dp"
+        android:left="15dp">
+        <shape
+            android:shape="oval">
+            <gradient android:type="linear"
+                android:gradientRadius="200dp"
+                android:startColor="#FFF" android:endColor="#666" android:angle="90"/>
+        </shape>
+    </item>
+    <item android:top="17dp"
+        android:bottom="17dp"
+        android:right="17dp"
+        android:left="17dp">
+        <shape
+            android:shape="oval">
+            <gradient android:type="linear"
+                android:gradientRadius="100dp"
+                android:startColor="#FFF" android:centerColor="@color/odoo_theme" android:endColor="#FFF" android:angle="180" />
+        </shape>
+    </item>
+    <item
+        android:top="25dp"
+        android:bottom="25dp"
+        android:right="25dp"
+        android:left="25dp">
+        <shape
+            android:shape="oval">
+            <gradient android:type="linear"
+                android:gradientRadius="50dp"
+                android:startColor="#FFF" android:centerColor="#DDD" android:endColor="#AAA" android:angle="-90"/>
+        </shape>
+    </item>
+</layer-list>

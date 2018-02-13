@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/timesheet_activity"
+        android:title="Timesheet" />
+    <item android:id="@+id/attendance_settings"
+        android:title="Settings" />
+    <item android:id="@+id/attendance_logout"
+        android:title="Logout" />
+</menu>

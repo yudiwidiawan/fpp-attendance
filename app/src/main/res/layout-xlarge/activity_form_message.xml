@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#50000000"
+    android:orientation="vertical"
+    tools:context="com.odoo.FormMessageActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/closeAddMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_close_black_24dp"
+            android:tint="@android:color/white" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_floating_form"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/txvProjectTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="15dp"
+                    android:shadowColor="@android:color/white"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="#Project : Project Title"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/odoo_theme" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <Button
+                        android:id="@+id/btnPrevLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prev"
+                        android:textColor="#777"
+                        android:background="@drawable/white_button"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"/>
+                    <Button
+                        android:id="@+id/btnLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_level"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="#777"
+                        android:padding="10dp"
+                        android:text="#Level : Internal"
+                        android:shadowColor="@android:color/white"
+                        android:shadowRadius="2"
+                        android:shadowDy="1"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textColor="#777" />
+                    <Button
+                        android:id="@+id/btnNextLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next"
+                        android:textColor="#777"
+                        android:background="@drawable/white_button"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"/>
+                </LinearLayout>
+
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_button"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btnNotes"
+                                android:layout_width="220dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@android:color/transparent"
+                                android:drawableLeft="@drawable/ic_playlist_add_check_black_24dp"
+                                android:drawablePadding="5dp"
+                                android:drawableStart="@drawable/ic_playlist_add_check_black_24dp"
+                                android:drawableTint="#777"
+                                android:gravity="start|center_vertical"
+                                android:padding="10dp"
+                                android:text="Note(s)"
+                                android:textColor="#777"
+                                android:drawableRight="@drawable/ic_add_black_24dp"/>
+
+                            <ListView
+                                android:id="@+id/lvNotes"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:descendantFocusability="beforeDescendants"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="220dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_button"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btnObstacles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@android:color/transparent"
+                                android:drawableLeft="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
+                                android:drawablePadding="5dp"
+                                android:drawableStart="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
+                                android:drawableTint="#777"
+                                android:gravity="start|center_vertical"
+                                android:padding="10dp"
+                                android:text="Obstacle(s)"
+                                android:textColor="#777"
+                                android:drawableRight="@drawable/ic_add_black_24dp"/>
+
+                            <ListView
+                                android:id="@+id/lvObstacles"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:scrollbarAlwaysDrawVerticalTrack="false" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="220dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_button"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btnNextThingToDo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@android:color/transparent"
+                                android:drawableLeft="@drawable/ic_playlist_add_black_24dp"
+                                android:drawablePadding="5dp"
+                                android:drawableStart="@drawable/ic_playlist_add_black_24dp"
+                                android:drawableTint="#777"
+                                android:gravity="start|center_vertical"
+                                android:padding="10dp"
+                                android:text="Next To Do(s)"
+                                android:textColor="#777"
+                                android:drawableRight="@drawable/ic_add_black_24dp"/>
+
+                            <ListView
+                                android:id="@+id/lvNextToDo"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:scrollbarAlwaysDrawVerticalTrack="false" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="220dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_button"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <Button
+                                    android:id="@+id/btnAttachFile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/transparent"
+                                    android:drawableLeft="@drawable/ic_attach_file_black_24dp"
+                                    android:drawablePadding="5dp"
+                                    android:drawableStart="@drawable/ic_attach_file_black_24dp"
+                                    android:drawableTint="#777"
+                                    android:gravity="start|center_vertical"
+                                    android:padding="10dp"
+                                    android:text="Attachment(s)"
+                                    android:textColor="#777"
+                                    android:drawableRight="@drawable/ic_add_black_24dp"/>
+                            </LinearLayout>
+                            
+
+                            <ListView
+                                android:id="@+id/lvAttachment"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:scrollbarAlwaysDrawVerticalTrack="false" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </ScrollView>
+        <Button
+            android:id="@+id/btnSendMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_signup_button"
+            android:padding="15dp"
+            android:text="Send Message"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>
