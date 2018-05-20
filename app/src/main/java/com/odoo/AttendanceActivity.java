@@ -324,8 +324,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
     public void loadInfoAttendance() {
         fields = new HashMap() {{
             put("fields", Arrays.asList("id", "employee_id", "create_uid",
-                    "check_in", "check_out", "worked_hours",
-                    "lat_in", "long_in", "create_date"));
+                    "check_in", "check_out", "worked_hours", "create_date"));
             put("limit", 75);
         }};
         conditions1 = Arrays.asList(Arrays.asList(
@@ -339,7 +338,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
         }};
         searchEMP = odoo.search_read(listenerEmp, user.getDatabase(),
                 String.valueOf(user.getUserId()), user.getPassword(), "hr.employee", conditions1, fields1);
-        thisIPAddress = InternetPeripheralUtils.getIPAddress(true);
+        //thisIPAddress = InternetPeripheralUtils.getIPAddress(true);
     }
 
     /**** Method for Setting the Height of the ListView dynamically.
@@ -467,7 +466,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                     }
                                 });
                                 //Initialize Google Play Services
-                                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                /*if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                     if (ContextCompat.checkSelfPermission(AttendanceActivity.this,
                                             Manifest.permission.ACCESS_FINE_LOCATION)
                                             == PackageManager.PERMISSION_GRANTED) {
@@ -479,7 +478,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                     }
                                 } else {
                                     buildGoogleApiClient();
-                                }
+                                }*/
                             }
                         }
                     });
@@ -583,7 +582,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                 } catch (ParseException e) {
                                     Log.e("error parse ", e.toString());
                                 }
-                                try {
+                               /* try {
                                     if(Float.parseFloat(classObj.get("lat_in").toString()) == 0.0000000 ||
                                             Float.parseFloat(classObj.get("long_in").toString()) == 0.0000000) {
                                         SharedPreferences preferences = getSharedPreferences("MyPrefs", 0);
@@ -594,7 +593,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                     SharedPreferences preferences = getSharedPreferences("MyPrefs", 0);
                                     preferences.edit().remove("firstLat").commit();
                                     preferences.edit().remove("firstLong").commit();
-                                }
+                                } */
                             } else {
                                 //unsetAlarm();
                                 //stopService(new Intent(AttendanceActivity.this, DistanceCalculatorService.class));
@@ -694,7 +693,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                     public void run() {
                         //unsetAlarm();
                         //unsetService();
-                        getLocation();
+                        //getLocation();
                         getAttendanceStatus();
                         layoutStatusCheckInOut.setVisibility(View.GONE);
                         txvStatusCheckInOut.setText("You checked out at " + currentDate);
@@ -759,10 +758,10 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                 Arrays.asList(Integer.parseInt(checkInId)),
                 new HashMap() {{
                     put("check_out", currentDate);
-                    put("lat_out", mLastLocation.getLatitude());
-                    put("long_out", mLastLocation.getLongitude());
-                    put("ipaddress_out", thisIPAddress);
-                    put("address_out", thisAddress);
+                    //put("lat_out", mLastLocation.getLatitude());
+                    //put("long_out", mLastLocation.getLongitude());
+                    //put("ipaddress_out", thisIPAddress);
+                    //put("address_out", thisAddress);
                 }});
         //Log.d("datanyahehe", data.toString());
         updateAttendanceTaskId = odoo.update(listenerAttendance, database, uid, password, "hr.attendance", data);
@@ -776,17 +775,17 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
         SimpleDateFormat sdfCreateWrite = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
         final String currentDate = sdf.format(new Date(System.currentTimeMillis() - 3600 * 7000));
         final String createWrite = sdfCreateWrite.format(new Date());
-        SharedData.setKey(AttendanceActivity.this, "firstLat", String.valueOf(mLastLocation.getLatitude()));
-        SharedData.setKey(AttendanceActivity.this, "firstLong", String.valueOf(mLastLocation.getLongitude()));
+        //SharedData.setKey(AttendanceActivity.this, "firstLat", String.valueOf(mLastLocation.getLatitude()));
+        //SharedData.setKey(AttendanceActivity.this, "firstLong", String.valueOf(mLastLocation.getLongitude()));
         List data = Arrays.asList(new HashMap() {{
             put("check_in", currentDate);
             put("employee_id", employeeID);
             put("create_date", createWrite);
             put("write_date", createWrite);
-            put("lat_in", mLastLocation.getLatitude());
-            put("long_in", mLastLocation.getLongitude());
-            put("ipaddress_in", thisIPAddress);
-            put("address_in", thisAddress);
+            //put("lat_in", mLastLocation.getLatitude());
+            //put("long_in", mLastLocation.getLongitude());
+            //put("ipaddress_in", thisIPAddress);
+            //put("address_in", thisAddress);
         }});
         createAttendanceTaskId = odoo.create(listenerAttendance, database, uid, password, "hr.attendance", data);
     }
@@ -798,21 +797,22 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                 btnCheck.setText("Wait...");
                 if (checkedIn == 2) {
                     try {
-                        if(!thisAddress.equals("null") || thisAddress != "") {
+                        createAttendance();
+                        /*if(!thisAddress.equals("null") || thisAddress != "") {
                             createAttendance();
                             //setAlarm();
                         } else {
                             Toast.makeText(this, "Check your connection and try again.", Toast.LENGTH_LONG).show();
-                            getLocation();
-                        }
+                            //getLocation();
+                        }*/
                     } catch(NullPointerException err) {
-
+                        Toast.makeText(this, "Check your connection and try again.", Toast.LENGTH_LONG).show();
                     }
 
                 } else if (checkedIn == 1) {
-                    SharedPreferences preferences = getSharedPreferences("MyPrefs", 0);
-                    preferences.edit().remove("firstLat").commit();
-                    preferences.edit().remove("firstLong").commit();
+                    //SharedPreferences preferences = getSharedPreferences("MyPrefs", 0);
+                    //preferences.edit().remove("firstLat").commit();
+                    //preferences.edit().remove("firstLong").commit();
                     updateAttendance();
                     unsetAlarm();
                 }
@@ -873,7 +873,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
             Location latLng = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             mLastLocation = latLng;
             //loginPaAndhi();
-            startIntentService();
+            //startIntentService();
         }
     }
     @Override
